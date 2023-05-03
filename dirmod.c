@@ -4,8 +4,9 @@
 #include <dirent.h>
 #include <sys/stat.h>
 
-int main() {
-    char *directory_path = "/home/user/Documents/Projects/Back-end/retail-apiserver"; // Substitua pelo caminho do diretório desejado
+int main(int argc, char *argv[]) {
+
+    char *directory_path = argv[1];
     DIR *directory = opendir(directory_path);
     struct dirent *dir_entry;
 
@@ -32,5 +33,6 @@ int main() {
 
     closedir(directory);
     printf("Permissões definidas com sucesso.\n");
+ 
     return 0;
 }
